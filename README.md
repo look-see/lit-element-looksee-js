@@ -1,6 +1,6 @@
 # <img align="center" src="https://avatars2.githubusercontent.com/u/76873423" width="96" height="96" /> Javascript Starter Template
 
-This project includes a sample [LitElement](https://lit-element.polymer-project.org) web component using looksee with [snowpack](https://www.snowpack.dev).
+This project includes a sample [LitElement](https://lit-element.polymer-project.org) web component using **looksee** with [snowpack](https://www.snowpack.dev).
 
 ## Setup
 
