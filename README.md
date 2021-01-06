@@ -28,7 +28,7 @@ npm start
 
 Tests are written in vanilla javascript. No, seriously:
 ```javascript
-document.addEventListener("DOMContentLoaded", async () => {
+export default async function testDefaultValues() {
   const testComponent1 = document.getElementById('test-component-1');
   
   /**
@@ -36,9 +36,10 @@ document.addEventListener("DOMContentLoaded", async () => {
    * and sends them to the terminal.
    * console.log()'s are ignored.
    */
+  console.info('\n');
   console.info('#test-component-1 renders with default property values');
   
-  // testComponent1.name='looksee';
+  // testComponent1.name='Wurld';
   console.assert(testComponent1.name === 'World', `Expected: "World" Found: "${testComponent1.name}"`);
   await testComponent1.updateComplete;
   console.assert(
@@ -53,11 +54,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     testComponent1.shadowRoot.querySelector('button').innerText === 'Click Count: 0', 
     `Expected: "Click Count: 0" Found: "${testComponent1.shadowRoot.querySelector('button').innerText}"`
   );
-});
+}
 ```
+
 When working with components that utilize the shawdow dom, such as [LitElement](https://lit-element.polymer-project.org) does, you need to wrap your tests in a `DOMContentLoaded` event listner. To be sure, it doesn't hurt to wrap all your tests this way.
 
-***If you run the tests in watch mode, you can uncomment the single line comments in the test files and have another looksee on demand.***
+```typescript
+import testClickEvent from "./click-event";
+import testDefaultValues from "./default-values";
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await testDefaultValues();
+  await testClickEvent();
+});
+```
 
 Tests can be run with the `test` scripts:
 
@@ -69,6 +79,8 @@ OR
 npm run test:watch
 ```
 ***Make sure to start the dev server first.***
+
+***If you run the tests in watch mode, you can uncomment the single line comments in the test files and have another looksee on demand.***
 
 ###### Copyright (c) 2021 Allan Mobley Jr. All rights reserved.
 ###### Licensed under the [MIT](./LICENSE) license.
