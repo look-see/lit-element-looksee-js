@@ -7,8 +7,8 @@
   "scripts": {
     "start": "snowpack dev",
     "start:clean": "snowpack dev --reload",
-    "test": "looksee",
-    "test:watch": "looksee -w"
+    "test": "looksee -u http://localhost:8080",
+    "test:watch": "looksee -w -u http://localhost:8080"
   },
   "keywords": [
     "web-components",

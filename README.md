@@ -39,19 +39,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.info('#test-component-1 renders with default property values');
   
   // testComponent1.name='looksee';
-  console.assert(testComponent1.name === 'World', `Actual: ${testComponent1.name}`);
+  console.assert(testComponent1.name === 'World', `Expected: "World" Found: "${testComponent1.name}"`);
   await testComponent1.updateComplete;
   console.assert(
     testComponent1.shadowRoot.querySelector('h1').innerText === 'Hello, World!', 
-    `Actual: ${testComponent1.shadowRoot.querySelector('h1').innerText}`
+    `Expected: "Hello, World" Found: "${testComponent1.shadowRoot.querySelector('h1').innerText}"`
   );
 
   // testComponent1.count++;
-  console.assert(testComponent1.count === 0, `Actual: ${testComponent1.count}`);
+  console.assert(testComponent1.count === 0, `Expected: 0 Found: ${testComponent1.count}`);
   await testComponent1.updateComplete;
   console.assert(
     testComponent1.shadowRoot.querySelector('button').innerText === 'Click Count: 0', 
-    `Actual: ${testComponent1.shadowRoot.querySelector('button').innerText}`
+    `Expected: "Click Count: 0" Found: "${testComponent1.shadowRoot.querySelector('button').innerText}"`
   );
 });
 ```
