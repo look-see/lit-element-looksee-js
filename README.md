@@ -31,7 +31,7 @@ Tests can be run with the `test` script:
 ```bash
 npm test
 ```
-***Make sure to start the dev server first***
+***Make sure to start the dev server first.***
 
 ###### Copyright (c) 2021 Allan Mobley Jr. All rights reserved.
 ###### Licensed under the [MIT](./LICENSE) license.
