@@ -26,10 +26,47 @@ npm start
 
 ## Testing
 
-Tests can be run with the `test` script:
+Tests are written in vanilla javascript. No seriously:
+```javascript
+document.addEventListener("DOMContentLoaded", async () => {
+  const testComponent1 = document.getElementById('test-component-1');
+  
+  /**
+   * looksee watches the page for console.info(), console.assert(), and console.error() calls,
+   * and sends them to the terminal.
+   * console.log()'s are ignored.
+   */
+  console.info('#test-component-1 renders with default property values');
+  
+  // testComponent1.name='looksee';
+  console.assert(testComponent1.name === 'World', `Actual: ${testComponent1.name}`);
+  await testComponent1.updateComplete;
+  console.assert(
+    testComponent1.shadowRoot.querySelector('h1').innerText === 'Hello, World!', 
+    `Actual: ${testComponent1.shadowRoot.querySelector('h1').innerText}`
+  );
+
+  // testComponent1.count++;
+  console.assert(testComponent1.count === 0, `Actual: ${testComponent1.count}`);
+  await testComponent1.updateComplete;
+  console.assert(
+    testComponent1.shadowRoot.querySelector('button').innerText === 'Click Count: 0', 
+    `Actual: ${testComponent1.shadowRoot.querySelector('button').innerText}`
+  );
+});
+```
+When working with components that utilize the shawdow dom, such as [LitElement](https://lit-element.polymer-project.org) does, you need to wrap your tests in a `DOMContentLoaded` event listner. To be sure, it doesn't hurt to wrap all your tests this way.
+
+***If you run the tests in watch mode, you can uncomment the single line comments in the test files and have another looksee on demand.***
+
+Tests can be run with the `test` scripts:
 
 ```bash
 npm test
+```
+OR
+```bash
+npm run test:watch
 ```
 ***Make sure to start the dev server first.***
 
