@@ -26,7 +26,7 @@ npm start
 
 ## Testing
 
-Tests are written in vanilla javascript. No seriously:
+Tests are written in vanilla javascript. No, seriously:
 ```javascript
 document.addEventListener("DOMContentLoaded", async () => {
   const testComponent1 = document.getElementById('test-component-1');
