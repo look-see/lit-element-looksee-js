@@ -1,4 +1,4 @@
-# <img align="center" src="https://avatars2.githubusercontent.com/u/76873423" width="96" height="96" /> looksee JavaScript starter 
+# <img align="center" src="https://avatars2.githubusercontent.com/u/76873423" width="96" height="96" /> looksee Javascript Starter Template
 
 This project includes a sample component using LitElement with JavaScript.
 
