@@ -19,8 +19,8 @@ export default async function testClickEvent() {
 
   const button = testComponent2.shadowRoot.querySelector('button');
 
-  button?.click();
-  // button?.click();
+  button.click();
+  // button.click();
   await testComponent2.updateComplete;
   console.assert(testComponent2.count === 1, `Expected: 1 Found: ${testComponent2.count}`);
   console.assert(button.innerText === 'Click Count: 1', `Expected: "Click Count: 1" Found: ${button.innerText}`);
