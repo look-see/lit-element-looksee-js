@@ -10,14 +10,6 @@ Install dependencies:
 npm i
 ```
 
-## Testing
-
-Tests can be run with the `test` script:
-
-```bash
-npm test
-```
-
 ## Dev Server
 
 This sample uses [snowpack](https://www.snowpack.dev) for previewing the project without additional build steps.
@@ -31,6 +23,15 @@ The dev server can be run with the `start` script:
 ```bash
 npm start
 ```
+
+## Testing
+
+Tests can be run with the `test` script:
+
+```bash
+npm test
+```
+***Make sure to start the dev server first***
 
 ###### Copyright (c) 2021 Allan Mobley Jr. All rights reserved.
 ###### Licensed under the [MIT](./LICENSE) license.
